@@ -23,33 +23,33 @@ class RoxyBotConfig:
     """Configuration class for Roxy Zip Maker Bot"""
     
     # Bot Configuration
-    ROXYBOT_API_ID = int(os.environ.get("API_ID", "34446649"))
-    ROXYBOT_API_HASH = os.environ.get("API_HASH", "8dc570c08d8e35e88fb9bfc73c65d7fa")
-    ROXYBOT_BOT_TOKEN = os.environ.get("BOT_TOKEN", "8626274039:AAHwM-Xl_FZ6FI6C0Kju7gRY1Gz8CPllBU8")
+    ROXYBOT_API_ID = int(os.environ.get("API_ID", "37476811"))
+    ROXYBOT_API_HASH = os.environ.get("API_HASH", "7aa60670b871050820086c6267371ee6")
+    ROXYBOT_BOT_TOKEN = os.environ.get("BOT_TOKEN", "8946367857:AAHOaGy51DC_M429EEiPD6RTPnIwreYowHo")
     
     # MongoDB Configuration
     ROXYBOT_MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb+srv://Anujedit:Anujedit@cluster0.7cs2nhd.mongodb.net/?appName=Cluster0")
     ROXYBOT_DATABASE_NAME = os.environ.get("DATABASE_NAME", "Anujedit")
     
     # Flask Configuration
-    ROXYBOT_FLASK_PORT = int(os.environ.get("PORT", "8080"))
+    ROXYBOT_FLASK_PORT = int(os.environ.get("PORT", "5000"))
     ROXYBOT_FLASK_HOST = os.environ.get("HOST", "0.0.0.0")
     
     # Bot Settings
-    ROXYBOT_OWNER_ID = int(os.environ.get("OWNER_ID", "7892805795"))
-    ROXYBOT_LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1003951808679"))
+    ROXYBOT_OWNER_ID = int(os.environ.get("OWNER_ID", "8730393744"))
+    ROXYBOT_LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1003955674028"))
     
     # Admin IDs (space or comma separated for multiple admins)
     @staticmethod
     def roxybot_get_admin_ids():
         """Get list of admin IDs from environment variable"""
-        admin_str = os.environ.get("ADMIN_IDS", "7892805795")
+        admin_str = os.environ.get("ADMIN_IDS", "8730393744")
         if not admin_str:
             # Fallback to OWNER_ID if ADMIN_IDS not set
-            owner = os.environ.get("OWNER_ID", "7892805795")
-            return [int(owner)] if owner != "7892805795" else []
+            owner = os.environ.get("OWNER_ID", "8730393744")
+            return [int(owner)] if owner != "8730393744" else []
         # Split by space or comma
-        admin_str = admin_str.replace(",", "7892805795")
+        admin_str = admin_str.replace(",", "8730393744")
         return [int(x.strip()) for x in admin_str.split() if x.strip().isdigit()]
     
     # Force Subscribe Settings
@@ -58,11 +58,11 @@ class RoxyBotConfig:
     @staticmethod
     def roxybot_get_force_sub_channels():
         """Get list of force subscribe channel IDs (max 3)"""
-        channels_str = os.environ.get("FORCE_SUB_CHANNELS", "-1003951808679")
+        channels_str = os.environ.get("FORCE_SUB_CHANNELS", "-1003955674028")
         if not channels_str:
             return []
         # Split by space or comma
-        channels_str = channels_str.replace(",", "-1003951808679")
+        channels_str = channels_str.replace(",", "-1003955674028")
         channels = []
         for x in channels_str.split():
             x = x.strip()
