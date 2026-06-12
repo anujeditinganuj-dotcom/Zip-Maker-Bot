@@ -227,7 +227,7 @@ async def roxybot_start_command(client: Client, message: Message):
         ],
         [
             InlineKeyboardButton("📞 Cᴏɴᴛᴀᴄᴛ", url="https://t.me/anujedits76"),
-            InlineKeyboardButton("🛠️ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/log_ak_bot")
+            InlineKeyboardButton("🛠️ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/log_ak_bots")
         ]
     ])
     
