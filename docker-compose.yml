@@ -1,0 +1,52 @@
+# 𝕽𝕺𝕏𝖄•𝔹𝕒𝕤𝕚𝕔ℕ𝕖𝕖𝕕𝔹𝕠𝕥 ⚡️
+# Docker Compose configuration for Roxy Zip Maker Bot
+# Created by: RoxyBasicNeedBot
+# © 2025 RoxyBasicNeedBot. All Rights Reserved.
+
+version: '3.8'
+
+services:
+  roxybot:
+    build: .
+    container_name: roxy-zip-maker-bot
+    restart: unless-stopped
+    
+    # Environment variables from .env file
+    env_file:
+      - .env
+    
+    # Port mapping for Flask keep-alive
+    ports:
+      - "${PORT:-8080}:8080"
+    
+    # Volumes for persistent data
+    volumes:
+      - ./downloads:/app/downloads
+      - ./zips:/app/zips
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8080/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Resource limits (optional)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1'
+    #       memory: 512M
+
+# 𝕽𝕺𝕏𝖄•𝔹𝕒𝕤𝕚𝕔ℕ𝕖𝕖𝕕𝔹𝕠𝕥 ⚡️
+# Follow me on:
+# YouTube: @roxybasicneedbot | Instagram: roxybasicneedbot1
+# Telegram: https://t.me/roxybasicneedbot1
